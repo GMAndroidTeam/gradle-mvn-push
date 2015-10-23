@@ -1,7 +1,7 @@
 # gradle-mvn-push
 上传aar到更美Maven库
 
-### 1.在gradle.properties文件中增加描述信息
+### 1.在gradle.properties文件中增加描述信息【全局gradle.properties或Module的gradle.properties文件中均可】
 
     GROUP=xxx.xxx.xxx
     VERSION_NAME=1.0.0
