@@ -6,8 +6,8 @@
     GROUP=xxx.xxx.xxx
     VERSION_NAME=1.0.0
     POM_ARTIFACT_ID=xxx
-    SNAPSHOT_REPOSITORY_URL=http://xxx.xxx.xxx/nexus/content/repositories/gengmei-android-snapshots/
-    RELEASE_REPOSITORY_URL=http://xxx.xxx.xxx/nexus/content/repositories/gengmei-android/
+    SNAPSHOT_REPOSITORY_URL=http://maven.gengmei/nexus/content/repositories/gengmei-android-snapshots/
+    RELEASE_REPOSITORY_URL=http://maven.gengmei/nexus/content/repositories/gengmei-android/
   
 ### 2.在local.properties文件中填写用户名和密码
   
