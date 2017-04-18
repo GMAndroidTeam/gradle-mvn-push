@@ -17,7 +17,11 @@
 ### 3.在需要打包aar并上传到Maven仓库的Module的build.gradle文件末尾添加依赖
 
     apply from: 'https://raw.githubusercontent.com/GMAndroidTeam/gradle-mvn-push/master/gradle-mvn-push.gradle'
-  
+  
+如果是上传plugin则使用：
+
+    apply from: 'https://raw.githubusercontent.com/GMAndroidTeam/gradle-mvn-push/master/gradle-plugin-push.gradle'
+    
 ### 4.执行上传命令
 
     ./gradlew upload
