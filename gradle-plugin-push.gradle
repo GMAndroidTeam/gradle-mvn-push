@@ -1,0 +1,35 @@
+/**
+ * @auther michaelliu
+ * @since 2017-04-18
+ * @describe 将gradle插件发布到Maven仓库
+ */
+apply plugin: 'maven'
+
+//获取用户名和密码
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def USER = properties.getProperty("user")
+def PASSWORD = properties.getProperty("password")
+
+//是否是Release版本，如果是快照版本需要在版本号后边追加-SNAPSHOT，eg：1.0.1-SNAPSHOT
+def isReleaseBuild() {
+    return VERSION_NAME.contains("SNAPSHOT") == false
+}
+
+afterEvaluate { project ->
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                pom.groupId = GROUP
+                pom.artifactId = POM_ARTIFACT_ID
+                pom.version = VERSION_NAME
+                repository(url: RELEASE_REPOSITORY_URL) {
+                    authentication(userName: USER, password: PASSWORD)
+                }
+                snapshotRepository(url: SNAPSHOT_REPOSITORY_URL) {
+                    authentication(userName: USER, password: PASSWORD)
+                }
+            }
+        }
+    }
+}
